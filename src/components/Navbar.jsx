@@ -1,10 +1,23 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
 const Navbar = () => {
   const [dropdown, setDropdown] = useState(false);
 
+  const ref = useRef();
+
   useEffect(() => {
-    document.title = `Current dropdown state: ${dropdown ? 'open' : 'closed'}`;
+    const handleClick = (e) => {
+      if (dropdown && ref.current && !ref.current.contains(e.target)) {
+        setDropdown(false);
+      }
+    };
+
+    document.addEventListener('click', handleClick);
+
+    return () => {
+      // Cleanup the event listener
+      document.removeEventListener('click', handleClick);
+    };
   }, [dropdown]);
 
   return (
@@ -12,7 +25,7 @@ const Navbar = () => {
       <ul>
         <li>Home</li>
         <li>About</li>
-        <li>
+        <li ref={ref}>
           <button type="button" onClick={() => setDropdown((prev) => !prev)}>
             Services
             <span>&#8595;</span>
