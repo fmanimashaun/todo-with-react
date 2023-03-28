@@ -1,15 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const TodoItem = ({ todoitem }) => (
-  <li>
-    <input type="checkbox" checked={todoitem.completed} />
-    {todoitem.title}
-  </li>
-);
+const TodoItem = ({ todo }) => <li>{todo.title}</li>;
 
 TodoItem.propTypes = {
-  todoitem: PropTypes.shape({
+  todo: PropTypes.shape({
     id: PropTypes.number.isRequired,
     title: PropTypes.string.isRequired,
     completed: PropTypes.bool.isRequired,
