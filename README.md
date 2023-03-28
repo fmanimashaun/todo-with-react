@@ -44,6 +44,8 @@ The project is about exploring the basic features of React. It is a simple todo 
 - [GitHub](https://github.com)
 - [Stylelint](https://stylelint.io/)
 - [ESLint](https://eslint.org/)
+- [sass](https://sass-lang.com/)
+- [VSCode](https://code.visualstudio.com/)
 
 
 ### Key Features <a name="key-features"></a>
