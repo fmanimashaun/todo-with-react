@@ -1,9 +1,11 @@
 import React from 'react';
+import Header from './Header';
+import TodoLogic from './TodoLogic';
 
 const TodoApp = () => (
   <>
-    <h1>Hello world!</h1>
-    <p>I am in a React Component!</p>
+    <Header />
+    <TodoLogic />
   </>
 );
 
