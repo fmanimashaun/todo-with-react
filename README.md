@@ -51,6 +51,7 @@ The project is about exploring the basic features of React. It is a simple todo 
 ### Key Features <a name="key-features"></a>
 
 - [x] Setting up a react app.
+- [x] Added jsconfig.json file to enable absolute imports.
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
