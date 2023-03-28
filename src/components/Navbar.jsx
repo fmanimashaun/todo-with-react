@@ -1,7 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 const Navbar = () => {
   const [dropdown, setDropdown] = useState(false);
+
+  useEffect(() => {
+    document.title = `Current dropdown state: ${dropdown ? 'open' : 'closed'}`;
+  }, [dropdown]);
 
   return (
     <nav>
