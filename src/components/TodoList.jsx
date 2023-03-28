@@ -3,11 +3,13 @@ import PropTypes from 'prop-types';
 import TodoItem from './TodoItem';
 
 const TodoList = ({ todos }) => (
-  <ul>
-    {todos.map((todo) => (
-      <TodoItem key={todo.id} todo={todo} />
-    ))}
-  </ul>
+  <>
+    <ul>
+      {todos.map((todo) => (
+        <TodoItem key={todo.id} todo={todo} />
+      ))}
+    </ul>
+  </>
 );
 
 TodoList.propTypes = {
@@ -16,7 +18,7 @@ TodoList.propTypes = {
       id: PropTypes.number.isRequired,
       title: PropTypes.string.isRequired,
       completed: PropTypes.bool.isRequired,
-    }),
+    }).isRequired,
   ).isRequired,
 };
 
