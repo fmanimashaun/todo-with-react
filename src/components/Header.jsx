@@ -1,10 +1,10 @@
 import React from 'react';
 
 const Header = () => (
-  <header>
+  <section>
     <h1>todos</h1>
     <p>Items will persist in the browser local storage</p>
-  </header>
+  </section>
 );
 
 export default Header;
