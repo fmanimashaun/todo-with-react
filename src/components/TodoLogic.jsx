@@ -1,4 +1,6 @@
 import React from 'react';
+import InputTodo from './InputTodo';
+import TodoList from './TodoList';
 
 const TodoLogic = () => {
   const todos = [
@@ -20,14 +22,10 @@ const TodoLogic = () => {
   ];
 
   return (
-    <ul>
-      {todos.map((todo) => (
-        <li key={todo.id}>
-          <input type="checkbox" checked={todo.completed} />
-          {todo.title}
-        </li>
-      ))}
-    </ul>
+    <div>
+      <InputTodo />
+      <TodoList todos={todos} />
+    </div>
   );
 };
 
