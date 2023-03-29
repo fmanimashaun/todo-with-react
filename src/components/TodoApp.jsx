@@ -6,8 +6,12 @@ import PageHeader from './PageHeader';
 const TodoApp = () => (
   <>
     <PageHeader />
-    <Header />
-    <TodoLogic />
+    <div className="wrapper">
+      <div className="todos">
+        <Header />
+        <TodoLogic />
+      </div>
+    </div>
   </>
 );
 

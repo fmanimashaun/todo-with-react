@@ -21,16 +21,17 @@ const InputTodo = ({ addTodoItem }) => {
   };
   return (
     <>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className="form-container">
         <input
+          className="input-text"
           type="text"
           placeholder="Add Todo..."
           value={description}
           onChange={handleChange}
         />
-        <button type="submit">Submit</button>
+        <button className="input-submit" type="submit">Submit</button>
       </form>
-      {error && <p style={{ color: 'red' }}>Please enter a todo</p>}
+      {error && <p className="submit-wraning">Please enter a todo</p>}
     </>
   );
 };
