@@ -37,7 +37,10 @@ const Form = () => {
   return (
     <>
       <h1>React Form Handling</h1>
-      <form onSubmit={handleSubmit}>
+      <form
+        className="form"
+        onSubmit={handleSubmit}
+      >
         <label htmlFor="firstName">
           First Name:
           <input
