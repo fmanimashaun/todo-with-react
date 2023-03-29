@@ -2,11 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import TodoItem from './TodoItem';
 
-const TodoList = ({ todos }) => (
+const TodoList = ({ todos, handleCheck }) => (
   <>
     <ul>
       {todos.map((todo) => (
-        <TodoItem key={todo.id} todo={todo} />
+        <TodoItem key={todo.id} todo={todo} handleCheck={handleCheck} />
       ))}
     </ul>
   </>
@@ -20,6 +20,7 @@ TodoList.propTypes = {
       completed: PropTypes.bool.isRequired,
     }).isRequired,
   ).isRequired,
+  handleCheck: PropTypes.func.isRequired,
 };
 
 export default TodoList;

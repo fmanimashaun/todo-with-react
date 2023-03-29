@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import InputTodo from './InputTodo';
 import TodoList from './TodoList';
 
 const TodoLogic = () => {
-  const todos = [
+  const [todos, setTodos] = useState([
     {
       id: 1,
       title: 'Setup development environment',
@@ -19,12 +19,24 @@ const TodoLogic = () => {
       title: 'Deploy to live server',
       completed: false,
     },
-  ];
+  ]);
+
+  const handleCheck = (id) => {
+    setTodos((prevState) => prevState.map((todo) => {
+      if (todo.id === id) {
+        return {
+          ...todo,
+          completed: !todo.completed,
+        };
+      }
+      return todo;
+    }));
+  };
 
   return (
     <div>
       <InputTodo />
-      <TodoList todos={todos} />
+      <TodoList todos={todos} handleCheck={handleCheck} />
     </div>
   );
 };
