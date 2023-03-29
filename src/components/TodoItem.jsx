@@ -1,19 +1,67 @@
-import React from 'react';
+import React, { useState, useRef } from 'react';
 import PropTypes from 'prop-types';
+import styles from 'assets/scss/TodoItem.module.scss';
 
-const TodoItem = ({ todo, handleCheck, delTodo }) => (
-  <li>
-    <input
-      type="checkbox"
-      checked={todo.completed}
-      onChange={() => handleCheck(todo.id)}
-    />
-    <button type="button" onClick={() => delTodo(todo.id)}>
-      Delete
-    </button>
-    {todo.title}
-  </li>
-);
+const TodoItem = ({
+  todo,
+  handleCheck,
+  delTodo,
+  setUpdate,
+}) => {
+  const [editing, setEditing] = useState(false);
+  const editInputRef = useRef(null);
+
+  const handleEditing = () => {
+    setEditing(true);
+  };
+
+  const handleUpdatedDone = (e) => {
+    if (e.key === 'Enter') {
+      setUpdate(editInputRef.current.value, todo.id);
+      setEditing(false);
+    }
+  };
+
+  const viewMode = {};
+  const editMode = {};
+  if (editing) {
+    viewMode.display = 'none';
+  } else {
+    editMode.display = 'none';
+  }
+  const completedStyle = {
+    textDecoration: 'line-through',
+    color: '#595959',
+    opacity: 0.4,
+    fontStyle: 'italic',
+  };
+  return (
+    <li className={styles.item}>
+      <div className={styles.content} style={viewMode}>
+        <input
+          type="checkbox"
+          checked={todo.completed}
+          onChange={() => handleCheck(todo.id)}
+        />
+        <button type="button" onClick={handleEditing}>Edit</button>
+        <button type="button" onClick={() => delTodo(todo.id)}>
+          Delete
+        </button>
+        <span style={todo.completed ? completedStyle : null}>
+          {todo.title}
+        </span>
+      </div>
+      <input
+        type="text"
+        ref={editInputRef}
+        defaultValue={todo.title}
+        className={styles.textInput}
+        style={editMode}
+        onKeyDown={handleUpdatedDone}
+      />
+    </li>
+  );
+};
 
 TodoItem.propTypes = {
   todo: PropTypes.shape({
@@ -23,6 +71,7 @@ TodoItem.propTypes = {
   }).isRequired,
   handleCheck: PropTypes.func.isRequired,
   delTodo: PropTypes.func.isRequired,
+  setUpdate: PropTypes.func.isRequired,
 };
 
 export default TodoItem;
