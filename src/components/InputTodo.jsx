@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import { FaPlusCircle } from 'react-icons/fa';
 
 const InputTodo = ({ addTodoItem }) => {
   const [description, setDescription] = useState('');
@@ -29,7 +30,15 @@ const InputTodo = ({ addTodoItem }) => {
           value={description}
           onChange={handleChange}
         />
-        <button className="input-submit" type="submit">Submit</button>
+        <button className="input-submit" type="submit">
+          <FaPlusCircle
+            style={{
+              color: '#5e5e5e',
+              fontSize: '20px',
+              marginTop: '2px',
+            }}
+          />
+        </button>
       </form>
       {error && <p className="submit-wraning">Please enter a todo</p>}
     </>
