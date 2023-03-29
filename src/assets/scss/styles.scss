@@ -80,3 +80,16 @@ button {
   top: 8px;
   cursor: pointer;
 }
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+
+  input[type="submit"] {
+      width: 200px;
+      padding: 10px;
+      cursor: pointer;
+    }
+}
+
