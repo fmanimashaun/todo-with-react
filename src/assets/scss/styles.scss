@@ -3,9 +3,9 @@
 @use './global.scss';
 @use './_colors.scss';
 
-/*==========================
+/* ==========================
 Sidebar navigation
-========================*/
+======================== */
 .navbar {
   position: relative;
 }
@@ -13,7 +13,7 @@ Sidebar navigation
 button {
   cursor: pointer;
   background: transparent;
-  ;
+  
   border: none;
   font-size: 20px;
 }
@@ -24,7 +24,7 @@ button {
   top: 40px;
   cursor: pointer;
   background: transparent;
-  ;
+  
   border: none;
 }
 
@@ -41,12 +41,13 @@ button {
   box-shadow: 0 10px 15px -3px rgb(46 41 51 / 8%), 0 4px 6px -2px rgb(71 63 79 / 16%);
   transform: translateX(-100px);
   transition: transform ease-in-out 0.2s;
+
   /* transition: width ease 0.2s; */
 }
 
 .menu-nav.show-menu {
   width: 100%;
-  transform: translateX(0px);
+  transform: translateX(0);
 }
 
 .menu-nav li a,
@@ -68,7 +69,7 @@ button {
 .form-container {
   display: flex;
   border-radius: calc(0.1 * 100px);
-  box-shadow: 0px 4px 14px 0px rgba(70, 70, 70, 0.38);
+  box-shadow: 0 4px 14px 0 rgba(70, 70, 70, 0.38);
   justify-content: space-around;
   background: #fff;
   font-size: 1rem;
