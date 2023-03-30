@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/todo-with-react/static/css/main.b946fc3c.css",
-    "main.js": "/todo-with-react/static/js/main.aa485d51.js",
+    "main.css": "/todo-with-react/static/css/main.617ec8ba.css",
+    "main.js": "/todo-with-react/static/js/main.3f7ceeb1.js",
     "static/media/Poppins-Regular.ttf": "/todo-with-react/static/media/Poppins-Regular.35d26b781dc5fda684cc.ttf",
     "static/media/Robaga_Rounded_Regular.otf": "/todo-with-react/static/media/Robaga_Rounded_Regular.2613e95fa67ea4b5f5f6.otf",
     "index.html": "/todo-with-react/index.html",
-    "main.b946fc3c.css.map": "/todo-with-react/static/css/main.b946fc3c.css.map",
-    "main.aa485d51.js.map": "/todo-with-react/static/js/main.aa485d51.js.map"
+    "main.617ec8ba.css.map": "/todo-with-react/static/css/main.617ec8ba.css.map",
+    "main.3f7ceeb1.js.map": "/todo-with-react/static/js/main.3f7ceeb1.js.map"
   },
   "entrypoints": [
-    "static/css/main.b946fc3c.css",
-    "static/js/main.aa485d51.js"
+    "static/css/main.617ec8ba.css",
+    "static/js/main.3f7ceeb1.js"
   ]
 }
