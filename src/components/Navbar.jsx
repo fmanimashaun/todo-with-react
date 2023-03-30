@@ -1,5 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
+import { MdClose } from 'react-icons/md';
+import { FiMenu } from 'react-icons/fi';
 
 const links = [
   { path: '/', text: 'Home' },
@@ -30,7 +32,11 @@ const Navbar = () => {
           className="toggle"
           onClick={() => setShowLinks((prev) => !prev)}
         >
-          {showLinks ? 'close' : 'open'}
+          {showLinks ? (
+            <MdClose style={{ width: '32px', height: '32px' }} />
+          ) : (
+            <FiMenu style={{ width: '32px', height: '32px' }} />
+          )}
         </button>
         <ul className={`menu-nav${showLinks ? ' show-menu' : ''}`}>
           {links.map((link) => (
