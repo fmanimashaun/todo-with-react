@@ -17,16 +17,13 @@ const Navbar = () => {
   useOnClickOutside(ref, dropdown, () => setDropdown(false));
 
   return (
-    <nav className='navbar'>
+    <nav className="navbar">
       <ul>
         {links.map((link) => (
           <li key={link.text}>
-            <NavLink
-              to={link.path}
-              className={({ isActive }) => isActive
-                ? 'active__class' : undefined
-              }
-            >{link.text}</NavLink>
+            <NavLink to={link.path}>
+              {link.text}
+            </NavLink>
           </li>
         ))}
       </ul>

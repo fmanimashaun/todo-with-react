@@ -1,5 +1,6 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
+import SinglePage from 'routes/SinglePage';
 
 import Home from 'routes/Home';
 import About from 'routes/About';
@@ -12,7 +13,9 @@ const TodoApp = () => (
   <Routes>
     <Route path="/" element={<Layout />}>
       <Route index element={<Home />} />
-      <Route path="/about" element={<About />} />
+      <Route path="/about" element={<About />}>
+        <Route path=":slug" element={<SinglePage />} />
+      </Route>
       <Route path="/login" element={<Login />} />
       <Route path="/profile" element={<Profile />} />
       <Route path="*" element={<NotMatch />} />

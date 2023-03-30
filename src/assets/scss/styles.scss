@@ -23,6 +23,15 @@ li {
   padding: 0.7rem 1rem;
   cursor: pointer;
 
+  a {
+    color: #333;
+    text-decoration: none;
+
+    &.active {
+      color: #8a4baf;
+    }
+  }
+
   button {
     border: none;
     color: inherit;
