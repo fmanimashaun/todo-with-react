@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import PropTypes from 'prop-types';
 import { FaPlusCircle } from 'react-icons/fa';
+import { useTodosContext } from './context/TodoContext';
 
-const InputTodo = ({ addTodoItem }) => {
+const InputTodo = () => {
+  const { addTodoItem } = useTodosContext();
   const [description, setDescription] = useState('');
   const [error, setError] = useState(false);
 
@@ -43,10 +44,6 @@ const InputTodo = ({ addTodoItem }) => {
       {error && <p className="submit-wraning">Please enter a todo</p>}
     </>
   );
-};
-
-InputTodo.propTypes = {
-  addTodoItem: PropTypes.func.isRequired,
 };
 
 export default InputTodo;

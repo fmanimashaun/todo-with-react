@@ -3,13 +3,10 @@ import PropTypes from 'prop-types';
 import { BsFillTrashFill } from 'react-icons/bs';
 import { AiFillEdit } from 'react-icons/ai';
 import styles from 'assets/scss/TodoItem.module.scss';
+import { useTodosContext } from './context/TodoContext';
 
-const TodoItem = ({
-  todo,
-  handleCheck,
-  delTodo,
-  setUpdate,
-}) => {
+const TodoItem = ({ todo }) => {
+  const { handleCheck, delTodo, setUpdate } = useTodosContext();
   const [editing, setEditing] = useState(false);
   const editInputRef = useRef(null);
 
@@ -71,9 +68,6 @@ TodoItem.propTypes = {
     title: PropTypes.string.isRequired,
     completed: PropTypes.bool.isRequired,
   }).isRequired,
-  handleCheck: PropTypes.func.isRequired,
-  delTodo: PropTypes.func.isRequired,
-  setUpdate: PropTypes.func.isRequired,
 };
 
 export default TodoItem;
