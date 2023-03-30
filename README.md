@@ -46,6 +46,7 @@ The project is about exploring the basic features of React. It is a simple todo 
 - [ESLint](https://eslint.org/)
 - [sass](https://sass-lang.com/)
 - [VSCode](https://code.visualstudio.com/)
+- [react icons](https://react-icons.github.io/react-icons)
 
 
 ### Key Features <a name="key-features"></a>
@@ -58,7 +59,10 @@ The project is about exploring the basic features of React. It is a simple todo 
 > [Live Demo Link](https://fmanimashaun.github.io/todo-with-react/)
 
 <p align="center">
-  <img width="500" src="#">
+  <img width="500" src="screenshots/demo-page1.png">
+</P>
+<p align="center">
+  <img width="500" src="screenshots/demo-page2.png">
 </P>
 
 ## 💻 Getting Started <a name="getting-started"></a>
